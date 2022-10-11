@@ -5,6 +5,11 @@ const { productNameValue } = require('../middlewares/valueValidation');
 
 const router = express.Router();
 
+router.post(
+  '/', productNameField, productNameValue,
+  productsController.createProduct,
+);
+
 router.get(
   '/',
   productsController.listProducts,
@@ -13,11 +18,6 @@ router.get(
 router.get(
   '/:id',
   productsController.listProductsById,
-);
-
-router.post(
-  '/', productNameField, productNameValue,
-  productsController.createProduct,
 );
 
 module.exports = router;

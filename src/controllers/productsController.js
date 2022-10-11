@@ -9,9 +9,9 @@ const listProductsById = async (req, res) => {
   const { id } = req.params;
   const { message } = await productsService.findById(id);
    if (message) {
-    res.status(200).json(message);
+    return res.status(200).json(message);
   }
-  return res.status(404).json({ message: 'Product not found' });
+  res.status(404).json({ message: 'Product not found' });
 };
 
 const createProduct = async (req, res) => {

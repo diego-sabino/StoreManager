@@ -1,4 +1,3 @@
-const camelize = require('camelize');
 const connection = require('./connection');
 
 const findById = async (driverId) => {
@@ -6,14 +5,14 @@ const findById = async (driverId) => {
     'SELECT * FROM products WHERE id = ?',
     [driverId],
   );
-  return camelize(result);
+  return result;
 };
 
 const findAll = async () => {
   const [result] = await connection.execute(
     'SELECT * FROM products',
   );
-  return camelize(result);
+  return result;
 };
 
 const insert = async (products) => {
