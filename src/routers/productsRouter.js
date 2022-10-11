@@ -1,5 +1,7 @@
 const express = require('express');
 const productsController = require('../controllers/productsController');
+const { productNameField } = require('../middlewares/fieldValidation');
+const { productNameValue } = require('../middlewares/valueValidation');
 
 const router = express.Router();
 
@@ -14,7 +16,7 @@ router.get(
 );
 
 router.post(
-  '/',
+  '/', productNameField, productNameValue,
   productsController.createProduct,
 );
 
