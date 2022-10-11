@@ -1,10 +1,14 @@
 const chai = require('chai');
+const sinon = require('sinon');
+const sinonChai = require('sinon-chai')
 const chaiHttp = require('chai-http');
 
 const { expect } = chai;
 
 chai.use(chaiHttp);
+chai.use(sinonChai);
 
+const connection = require('../../../src/models/connection');
 const app = require('../../../src/app');
 
 const {
@@ -36,5 +40,27 @@ describe('Teste de integração de products', function () {
 
     expect(response.status).to.be.equal(404);
     expect(response.body).to.be.deep.equal({ message: 'Product not found' });
+  });
+  it('Criação de um novo produto', async function () {
+    const response = await chai
+      .request(app)
+      .post('/products')
+      .send({
+        name: 'Júpiter',
+      });
+
+    expect(response.status).to.be.equal(201);
+  });
+  it('Criação de um novo produto com o nome inválido', async function () {
+
+    const response = await chai
+      .request(app)
+      .post('/products')
+      .send({
+        name: 'a',
+      });
+
+    expect(response.status).to.be.equal(422);
+    expect(response.body).to.be.deep.equal({ "message": "\"name\" length must be at least 5 characters long" });
   });
 });

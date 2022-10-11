@@ -24,15 +24,15 @@
     "containerId": "",
     "name": "localhost:3000/products",
     "url": "localhost:3000/products",
-    "method": "POST",
+    "method": "GET",
     "sortNum": 0,
     "created": "2022-10-11T20:03:55.551Z",
-    "modified": "2022-10-11T20:36:56.008Z",
+    "modified": "2022-10-11T21:05:42.171Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"aaaaaa\"\n}",
+      "raw": "{\n  \"name\": \"ier\"\n}",
       "form": []
     },
     "tests": []
