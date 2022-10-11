@@ -1,0 +1,40 @@
+[
+  {
+    "_id": "77eab942-cddb-423f-a39f-cb3a050ca9bf",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-11T20:03:41.975Z",
+    "modified": "2022-10-11T20:13:26.397Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"Opa\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "96cecd90-67a3-4435-8180-c07aacf36aea",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-10-11T20:03:55.551Z",
+    "modified": "2022-10-11T20:13:21.722Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\":\"Opa\"\n}",
+      "form": []
+    },
+    "tests": []
+  }
+]
