@@ -1,5 +1,4 @@
 const chai = require('chai');
-const sinon = require('sinon');
 const sinonChai = require('sinon-chai')
 const chaiHttp = require('chai-http');
 
@@ -8,7 +7,6 @@ const { expect } = chai;
 chai.use(chaiHttp);
 chai.use(sinonChai);
 
-const connection = require('../../../src/models/connection');
 const app = require('../../../src/app');
 
 const {
