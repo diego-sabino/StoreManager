@@ -33,9 +33,19 @@ const editById = async (id, name) => {
   return result;
 };
 
+const deleteById = async (id) => {
+  const [result] = await connection.execute(
+    `DELETE FROM products
+    WHERE id = ?`,
+    [id],
+);
+  return result;
+};
+
 module.exports = {
   findById,
   findAll,
   insert,
   editById,
+  deleteById,
 };
