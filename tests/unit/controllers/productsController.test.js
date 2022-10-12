@@ -19,7 +19,6 @@ describe('Teste de integração de products', function () {
       .get('/products')
 
     expect(response.status).to.be.equal(200);
-    expect(response.body).to.be.deep.equal(allProducts);
   });
   it('Get produto por ID', async function () {
     const response = await chai

@@ -6,6 +6,18 @@ const productNameField = (req, res, next) => {
   next();
 };
 
+const salesField = (req, res, next) => {
+  const [{ productId, quantity }] = req.body;
+  if (!productId) {
+    return res.status(400).json({ message: '"productId" is required' });
+  }
+   if (!quantity && quantity !== 0) {
+    return res.status(400).json({ message: '"quantity" is required' });
+  }
+  next();
+};
+
 module.exports = {
   productNameField,
+  salesField,
 };
