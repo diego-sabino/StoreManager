@@ -12,12 +12,18 @@ const createSale = async (sales) => {
 
 const findById = async (saleId) => {
   const sale = await salesModel.findById(saleId);
-  console.log(sale);
+  // console.log(sale);
   return { message: sale };
+};
+
+const deleteSale = async (id) => {
+  const newSaleId = await salesModel.deleteById(id);
+  return { message: newSaleId };
 };
 
 module.exports = {
   createSale,
   findAll,
   findById,
+  deleteSale,
 };
