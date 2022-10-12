@@ -20,4 +20,9 @@ router.get(
   productsController.listProductsById,
 );
 
+router.put(
+  '/:id', productNameField, productNameValue,
+  productsController.editProduct,
+);
+
 module.exports = router;
