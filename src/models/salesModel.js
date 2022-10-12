@@ -20,15 +20,43 @@ const createSaleProduct = async (sales) => {
   return result;
 };
 
-const findById = async (productId) => {
-  const [[result]] = await connection.execute(
-    'SELECT * FROM products WHERE id = ?',
-    [productId],
-  );
+const findById = async (saleId) => {
+  const [result] = await connection
+    .execute(`
+    SELECT 
+    distinct   
+    s.date,
+    a.product_id productId,
+    a.quantity
+    FROM
+    StoreManager.sales_products a
+    INNER JOIN
+    StoreManager.sales s
+    WHERE a.sale_id = ?
+    ORDER BY a.product_id
+    `, [saleId]);
+  return result;
+};
+
+const findAll = async () => {
+  const [result] = await connection
+    .execute(`
+    SELECT
+    DISTINCT
+    a.sale_id saleId,
+    s.date,
+    a.product_id productId,
+    a.quantity
+    FROM
+    StoreManager.sales_products a
+    INNER JOIN
+    StoreManager.sales s
+    ORDER BY sale_id, product_id`);
   return result;
 };
 
 module.exports = {
   createSaleProduct,
   findById,
+  findAll,
 };

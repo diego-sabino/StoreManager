@@ -6,8 +6,8 @@ const findAll = async () => {
 };
 
 const findById = async (productId) => {
-  const passenger = await productsModel.findById(productId);
-  return { message: passenger };
+  const product = await productsModel.findById(productId);
+  return { message: product };
 };
 
 const createProduct = async (name) => {
