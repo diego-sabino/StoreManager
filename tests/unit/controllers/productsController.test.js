@@ -3,7 +3,7 @@ const chaiHttp = require('chai-http');
 
 const { expect } = chai;
 
-chai.use(chaiHttp);
+// chai.use(chaiHttp);
 
 const app = require('../../../src/app');
 
