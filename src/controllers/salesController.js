@@ -40,7 +40,7 @@ const editSale = async (req, res) => {
   // console.log(sales);
   await salesService.editSale(sales);
   const { message } = await salesService.findById(id);
-  console.log(message);
+  // console.log(message);
   if (message.length) return res.status(200).json({ saleId: id, itemsUpdated: sales });
   res.status(404).json({ message: 'Sale not found' });
 };

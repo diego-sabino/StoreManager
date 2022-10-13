@@ -11,7 +11,7 @@ const listProductsById = async (req, res) => {
    if (message) {
     return res.status(200).json(message);
   }
-  res.status(404).json({ message: 'Product not found' });
+  res.status(404).json({ message: 'Product not id' });
 };
 
 const createProduct = async (req, res) => {
@@ -25,7 +25,7 @@ const deleteProduct = async (req, res) => {
   const { message } = await productsService.findById(id);
   await productsService.deleteProduct(id);
   if (message) return res.status(204).json(message);
-  res.status(404).json({ message: 'Product not found' });
+  res.status(404).json({ message: 'Product not del' });
 };
 
 const editProduct = async (req, res) => {
@@ -35,7 +35,16 @@ const editProduct = async (req, res) => {
   const { message } = await productsService.findById(id);
   // console.log(message);
   if (message) return res.status(200).json(message);
-  res.status(404).json({ message: 'Product not found' });
+  res.status(404).json({ message: 'Product not edit' });
+};
+
+const searchProduct = async (req, res) => {
+  const { q } = req.query;
+  const { message } = await productsService.searchProduct(q);
+  // console.log(message);
+  // if (message) return
+  res.status(200).json(message);
+  // res.status(404).json({ message: 'Product not found' });
 };
 
 module.exports = {
@@ -44,4 +53,5 @@ module.exports = {
   createProduct,
   editProduct,
   deleteProduct,
+  searchProduct,
 };

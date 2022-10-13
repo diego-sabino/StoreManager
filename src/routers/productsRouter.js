@@ -10,15 +10,15 @@ router.post(
   productsController.createProduct,
 );
 
-router.get(
-  '/',
-  productsController.listProducts,
-);
+// router.get(
+//   '/',
+//   productsController.listProducts,
+// );
 
-router.get(
-  '/:id',
-  productsController.listProductsById,
-);
+// router.get(
+//   '/:id',
+//   productsController.listProductsById,
+// );
 
 router.put(
   '/:id', productNameField, productNameValue,
@@ -28,6 +28,11 @@ router.put(
 router.delete(
   '/:id', 
   productsController.deleteProduct,
+);
+
+router.get(
+  '/search', 
+  productsController.searchProduct,
 );
 
 module.exports = router;

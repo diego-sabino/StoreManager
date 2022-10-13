@@ -78,5 +78,179 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "67db965d-c9fc-4af6-be3d-c10168a87ebc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products",
+    "url": "localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T02:50:29.563Z",
+    "modified": "2022-10-13T02:51:00.784Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "84afd214-1ea8-40aa-8fa5-60d973a0c8a1",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Martelo",
+    "url": "localhost:3000/products/search?q=Martelo",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T02:50:51.299Z",
+    "modified": "2022-10-13T03:29:10.582Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Martelo",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "db49e8ca-e8a1-4788-9fb6-3aad2c31e4e9",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Martel",
+    "url": "localhost:3000/products/search?q=Martel",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:12:53.906Z",
+    "modified": "2022-10-13T03:12:53.912Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Martel",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "9ab77451-db1d-494c-86e2-b6655eb6adee",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Marte",
+    "url": "localhost:3000/products/search?q=Marte",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:20:14.864Z",
+    "modified": "2022-10-13T03:21:08.726Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Marte",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "52ab0e10-523b-4429-a60c-7ec62b44c672",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=M",
+    "url": "localhost:3000/products/search?q=M",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:21:11.453Z",
+    "modified": "2022-10-13T03:29:30.433Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "M",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "a2036579-ed33-4204-9aa9-9bda1c9ab63a",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Mart",
+    "url": "localhost:3000/products/search?q=Mart",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:25:31.644Z",
+    "modified": "2022-10-13T03:29:25.657Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Mart",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "a0868d88-cd54-4151-8193-80e8e77f263d",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=a",
+    "url": "localhost:3000/products/search?q=a",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:25:35.613Z",
+    "modified": "2022-10-13T03:27:46.303Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "a",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "8802e4fc-6046-47cf-b102-85003c2696fb",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Ma",
+    "url": "localhost:3000/products/search?q=Ma",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:29:28.268Z",
+    "modified": "2022-10-13T03:29:28.275Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "Ma",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "767c1d0a-e811-4868-a514-bd65e76296fa",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=t",
+    "url": "localhost:3000/products/search?q=t",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:29:40.818Z",
+    "modified": "2022-10-13T03:29:40.826Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "t",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
