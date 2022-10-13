@@ -42,9 +42,8 @@ const searchProduct = async (req, res) => {
   const { q } = req.query;
   const { message } = await productsService.searchProduct(q);
   // console.log(message);
-  // if (message) return
-  res.status(200).json(message);
-  // res.status(404).json({ message: 'Product not found' });
+  if (message.length) return res.status(200).json(message);
+  res.status(404).json({ message: 'Product not found' });
 };
 
 module.exports = {

@@ -11,7 +11,6 @@ const createSaleProduct = async (sales) => {
   const result = await createDate();
   await sales.forEach((async (sale) => {
     const { productId, quantity } = sale;
-    // console.log(productId);
     await connection.execute(
       `INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity)
       VALUES (?, ?, ?)`, [result.insertId, productId, quantity],
@@ -67,7 +66,6 @@ const deleteById = async (id) => {
 const editById = async (sales) => {
   const result = await sales.forEach((async (sale) => {
     const { quantity, productId } = sale;
-    // console.log(id, productId, quantity);
    await connection.execute(
     `UPDATE sales_products
     SET

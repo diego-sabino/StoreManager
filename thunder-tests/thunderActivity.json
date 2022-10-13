@@ -258,19 +258,18 @@
     "colId": "history",
     "containerId": "",
     "name": "localhost:3000/products/search?q=Opaa",
-    "url": "localhost:3000/products/search?q=m",
-    "method": "GET",
+    "url": "localhost:3000/sales/1",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2022-10-13T03:43:53.004Z",
-    "modified": "2022-10-13T03:51:32.055Z",
+    "modified": "2022-10-13T04:04:12.915Z",
     "headers": [],
-    "params": [
-      {
-        "name": "q",
-        "value": "m",
-        "isPath": false
-      }
-    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[{\"productId\": 1, \"quantity\": 10 }]",
+      "form": []
+    },
     "tests": []
   }
 ]

@@ -12,7 +12,6 @@ const createSale = async (sales) => {
 
 const findById = async (saleId) => {
   const sale = await salesModel.findById(saleId);
-  // console.log(sale);
   return { message: sale };
 };
 

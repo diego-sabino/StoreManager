@@ -47,7 +47,6 @@ const searchByParams = async (name) => {
     'SELECT * FROM products WHERE name LIKE ?',
     [`${name.substr(0, 1)}%`],
   );
-  // console.log(`${name.substr(0, 1)}%`);
   return result;
 };
 

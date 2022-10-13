@@ -10,20 +10,19 @@ const app = require('../../../src/app');
 
 const {
   productByID,
-  allProducts,
 } = require('./mocks/productsControllerMock');
 
-describe('Teste de integração de products', function () {
+describe('Testes de integração de Products', function () {
   beforeEach(async () => await runSeed());
   afterEach(async () => await connect().end());
-  it('Requisição get de todos os produtos', async function () {
+  it('Será validado que é possível listar todos os produtos', async function () {
     const response = await chai
       .request(app)
       .get('/products')
 
     expect(response.status).to.be.equal(200);
   });
-  it('Requisição get de um produto por ID', async function () {
+  it('Será validado que é possível listar um produto pelo ID', async function () {
     const response = await chai
       .request(app)
       .get('/products/1')
@@ -31,7 +30,7 @@ describe('Teste de integração de products', function () {
     expect(response.status).to.be.equal(200);
     expect(response.body).to.be.deep.equal(productByID);
   });
-  it('Requisição get de um produto que não existe', async function () {
+  it('Será validado que não é possível listar um produto com o ID inexistente', async function () {
     const response = await chai
       .request(app)
       .get('/products/999')
@@ -39,7 +38,7 @@ describe('Teste de integração de products', function () {
     expect(response.status).to.be.equal(404);
     expect(response.body).to.be.deep.equal({ message: 'Product not found' });
   });
-  it('Criação de um novo produto', async function () {
+  it('Será validado que é possível criar um novo produto', async function () {
     const response = await chai
       .request(app)
       .post('/products')
@@ -49,8 +48,7 @@ describe('Teste de integração de products', function () {
 
     expect(response.status).to.be.equal(201);
   });
-  it('Criação de um novo produto com o nome inválido', async function () {
-
+  it('Será validado que não é possível criar um novo produto com name inválido', async function () {
     const response = await chai
       .request(app)
       .post('/products')
@@ -59,10 +57,9 @@ describe('Teste de integração de products', function () {
       });
 
     expect(response.status).to.be.equal(422);
-    expect(response.body).to.be.deep.equal({ "message": "\"name\" length must be at least 5 characters long" });
+    expect(response.body).to.be.deep.equal({ message: '"name" length must be at least 5 characters long' });
   });
-   it('Deletar um produto', async function () {
-
+   it('Será validado que é possível deletar um produto pelo ID', async function () {
     const response = await chai
       .request(app)
       .delete('/products/1')
@@ -70,8 +67,7 @@ describe('Teste de integração de products', function () {
     expect(response.status).to.be.equal(204);
     expect(response.body).to.be.deep.equal({});
    });
-  it('Deletar um produto inexistente', async function () {
-
+  it('Será validado que não é possível deletar um produto com o ID inexistente', async function () {
     const response = await chai
       .request(app)
       .delete('/products/363187')
@@ -79,8 +75,7 @@ describe('Teste de integração de products', function () {
     expect(response.status).to.be.equal(404);
     expect(response.body).to.be.deep.equal({ message: "Product not found" });
   });
-  it('Editar um produto inexistente', async function () {
-
+  it('Será validado que não é possível editar um produto inexistente', async function () {
     const response = await chai
       .request(app)
       .put('/products/363187')
@@ -89,14 +84,29 @@ describe('Teste de integração de products', function () {
     expect(response.status).to.be.equal(404);
     expect(response.body).to.be.deep.equal({ message: "Product not found" });
   });
-  it('Editar um produto', async function () {
-
+  it('Será validado que é possível editar um produto pelo name', async function () {
     const response = await chai
       .request(app)
       .put('/products/1')
       .send({ "name": "zephyr664" })
 
     expect(response.status).to.be.equal(200);
-    expect(response.body).to.be.deep.equal({"id": 1, "name": "zephyr664"});
+    expect(response.body).to.be.deep.equal({id: 1, name: "zephyr664"});
+  });
+  it('Será validado que é possível buscar um produto pelo name', async function () {
+    const response = await chai
+      .request(app)
+      .get('/products/search?q=M')
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.be.deep.equal([{id: 1, name: "Martelo de Thor"}]);
+  });
+  it('Será validado que não é possível buscar um produto inexistente', async function () {
+    const response = await chai
+      .request(app)
+      .get('/products/search?q=9')
+
+    expect(response.status).to.be.equal(404);
+    expect(response.body).to.be.deep.equal({ message: "Product not found" });
   });
 });
