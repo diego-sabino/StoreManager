@@ -242,12 +242,32 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-10-13T03:29:40.818Z",
-    "modified": "2022-10-13T03:29:40.826Z",
+    "modified": "2022-10-13T03:42:38.074Z",
     "headers": [],
     "params": [
       {
         "name": "q",
         "value": "t",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "0922a0d9-a56e-44cc-bd40-5f1e1b6741cc",
+    "colId": "history",
+    "containerId": "",
+    "name": "localhost:3000/products/search?q=Opaa",
+    "url": "localhost:3000/products/search?q=m",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-10-13T03:43:53.004Z",
+    "modified": "2022-10-13T03:51:32.055Z",
+    "headers": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "m",
         "isPath": false
       }
     ],
