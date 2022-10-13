@@ -64,9 +64,25 @@ const deleteById = async (id) => {
   return result;
 };
 
+const editById = async (sales) => {
+  const result = await sales.forEach((async (sale) => {
+    const { quantity, productId } = sale;
+    // console.log(id, productId, quantity);
+   await connection.execute(
+    `UPDATE sales_products
+    SET
+    quantity = ?
+    WHERE product_id = ?`,
+    [quantity, productId],
+   );
+  }));
+  return result;
+};
+
 module.exports = {
   createSaleProduct,
   findById,
   findAll,
   deleteById,
+  editById,
 };

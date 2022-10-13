@@ -45,13 +45,7 @@ describe('Teste de integração de sales', function () {
     const response = await chai
       .request(app)
       .post('/sales')
-      .send([
-  {
-    "product": 1,
-    "quantity": 1
-  }
-]);
-
+      .send([{"product": 1,"quantity": 1}]);
     expect(response.status).to.be.equal(400);
     expect(response.body).to.be.deep.equal({ message: '"productId" is required' });
   });
@@ -59,12 +53,7 @@ describe('Teste de integração de sales', function () {
     const response = await chai
       .request(app)
       .post('/sales')
-      .send([
-  {
-    "productId": 1,
-    "quantit": 1
-  }
-]);
+      .send([{"productId": 1,"quantit": 1}]);
     expect(response.status).to.be.equal(400);
     expect(response.body).to.be.deep.equal({ message: '"quantity" is required' });
   });
@@ -73,14 +62,27 @@ describe('Teste de integração de sales', function () {
       .request(app)
       .post('/sales')
       .send([{ "productId": 1, "quantity": 1 }]);
-     
     expect(response.status).to.be.equal(201);
-     expect(response.body).to.be.deep.equal({
-       "id": 3,
-        "itemsSold": [{
-          "productId": 1,
-          "quantity": 1
-        }]
-    });
+    expect(response.body).to.be.deep.equal({
+      "id": 3,
+      "itemsSold": [{
+        "productId": 1,
+        "quantity": 1
+      }]
   });
+  });
+   it('Deletar uma sale', async function () {
+    const response = await chai
+       .request(app)
+       .delete('/sales/1')
+     expect(response.status).to.be.equal(204);
+     expect(response.body).to.be.deep.equal({});
+   });
+   it('Deletar uma sale inexistente', async function () {
+     const response = await chai
+       .request(app)
+       .delete('/sales/363187')
+     expect(response.status).to.be.equal(404);
+     expect(response.body).to.be.deep.equal({ message: "Sale not found" });
+   });
 });

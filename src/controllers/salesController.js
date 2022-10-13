@@ -28,8 +28,20 @@ const deleteSale = async (req, res) => {
   const { id } = req.params;
   const { message } = await salesService.findById(id);
   await salesService.deleteSale(id);
-  console.log(message);
+  // console.log(message);
   if (message.length) return res.status(204).json(message);
+  res.status(404).json({ message: 'Sale not found' });
+};
+
+const editSale = async (req, res) => {
+  const { id } = req.params;
+  // const [{ productId, quantity }] = req.body;
+  const sales = req.body;
+  // console.log(sales);
+  await salesService.editSale(sales);
+  const { message } = await salesService.findById(id);
+  console.log(message);
+  if (message.length) return res.status(200).json({ saleId: id, itemsUpdated: sales });
   res.status(404).json({ message: 'Sale not found' });
 };
 
@@ -38,4 +50,5 @@ module.exports = {
   listSales,
   listSalesById,
   deleteSale,
+  editSale,
 };
